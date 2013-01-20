@@ -79,8 +79,8 @@ mr.take = function (n) {
 };
 
 mr.lighten = function(color,by) {
-    var hsl = color.hsl().map(function(val,idx) {
+    var hsv = color.hsv().map(function(val,idx) {
         return (idx == 1) ? (by || 0.2) * val : val
     });
-    return mr.fromHSL.apply(undefined,hsl);
+    return mr.fromHSL.apply(undefined,convert.hsv2hsl(hsv));
 };
