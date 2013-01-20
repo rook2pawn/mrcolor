@@ -63,6 +63,11 @@ mr.take(n)
 
 Generate `n` colors as an array.
 
+mr.lighten(color,[by])
+----------
+
+Return a lighter version of a color.
+
 color objects
 =============
 
