@@ -77,3 +77,10 @@ mr.take = function (n) {
     
     return res;
 };
+
+mr.lighten = function(color) {
+    var hsl = color.hsl().map(function(val,idx) {
+        return (idx == 1) ? 0.2*val : val
+    });
+    return mr.fromHSL.apply(undefined,hsl);
+};
