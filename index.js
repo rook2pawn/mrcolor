@@ -84,3 +84,7 @@ mr.lighten = function(color,by) {
     });
     return mr.fromHSL.apply(undefined,convert.hsv2hsl(hsv));
 };
+
+mr.rgbToColorObj = function(color) {
+    return mr.fromHSL.apply(undefined,convert.rgb2hsl(color))
+}
