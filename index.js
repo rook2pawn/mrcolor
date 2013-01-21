@@ -85,6 +85,12 @@ mr.lighten = function(color,by) {
     return mr.fromHSL.apply(undefined,convert.hsv2hsl(hsv));
 };
 
-mr.rgbToColorObj = function(color) {
-    return mr.fromHSL.apply(undefined,convert.rgb2hsl(color))
+mr.rgbhexToColorObj = function(color) {
+    var cutHex = function (h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
+    var hexToR = function (h) {return parseInt((cutHex(h)).substring(0,2),16)}
+    var hexToG = function (h) {return parseInt((cutHex(h)).substring(2,4),16)}
+    var hexToB = function (h) {return parseInt((cutHex(h)).substring(4,6),16)}
+   
+    var rgb = [hexToR(color),hexToG(color),hexToB(color)]; 
+    return mr.fromHSL.apply(undefined,convert.rgb2hsl(rgb))
 }
